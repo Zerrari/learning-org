@@ -1,0 +1,67 @@
+* Day 1
+** Headlines
+*** one star stands for the first level
+*** each star increase depth by one level
+Example 
++ * first level
++ ** second level
++ *** third level
+*** command
+1. C-c C-n *next heading*
+2. C-c C-p *previous heading*
+3. C-c C-b *previous heading same level*
+4. C-c C-f *next heading same level*
+5. C-c C-u *back to higher level*
+
+** Lists
+*** ordered lists
+**** use *1.*, *1)*, *A.*, *A)* 
+*** unorded lists
+**** use *+*, *-*, *** 
+
+** Links
+~[[traget][description]]~
+[[https://www.baidu.com][search engine]]
+
+** Blocks
+#+begin_src emacs-lisp
+(+ 1 2)
+(defun welcome()
+   (message "hello world"))
+#+end_src
+
+use ~C-c~ to insert a src block
+
+** Tabels
+*** *|* is a column separator, also the first non-whitesapce character to be considersd as a table
+*** a line start with *|-* is a horizontal symbol
+*** key
++ *Tab* to align the table
++ *C-c space* to rewrite the date in table
++ /and so on/
+*** example 
+| name  | age | gardes |
+|-------+-----+--------|
+| peter |  12 |     95 |
+| Anna  |  14 |     80 |
+
+** Comments
+*** # starts with a line comments
+**** example
+# This is a comment.
+*** inline comments @@comment:like so@@
+**** example
+This is an inline comment @@comment:inline@@ .
+*** block comments 
+#+begin_comment
+This is a block comment.    
+#+end_comment
+*** section comments
+**** example 
+~* COMMENT~
+~** COMMENT~
+   */just like the star of headline/*
+
+
+
+* Day 2
