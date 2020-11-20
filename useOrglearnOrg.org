@@ -1,5 +1,5 @@
 * Day 1
-** Headlines
+** Headlines                                                      :Headlines:
 *** one star stands for the first level
 *** each star increase depth by one level
 Example 
@@ -13,17 +13,17 @@ Example
 4. C-c C-f *next heading same level*
 5. C-c C-u *back to higher level*
 
-** Lists
+** Lists                                                              :Lists:
 *** ordered lists
 **** use *1.*, *1)*, *A.*, *A)* 
 *** unorded lists
 **** use *+*, *-*, *** 
 
-** Links
+** Links                                                              :Links:
 ~[[traget][description]]~
 [[https://www.baidu.com][search engine]]
 
-** Blocks
+** Blocks                                                            :Blocks:
 #+begin_src emacs-lisp
 (+ 1 2)
 (defun welcome()
@@ -32,7 +32,7 @@ Example
 
 use ~C-c~ to insert a src block
 
-** Tabels
+** Tabels                                                            :Tables:
 *** *|* is a column separator, also the first non-whitesapce character to be considersd as a table
 *** a line start with *|-* is a horizontal symbol
 *** key
@@ -45,7 +45,7 @@ use ~C-c~ to insert a src block
 | peter |  12 |     95 |
 | Anna  |  14 |     80 |
 
-** Comments
+** Comments                                                        :Comments:
 *** # starts with a line comments
 **** example
 # This is a comment.
@@ -61,7 +61,44 @@ This is a block comment.
 ~* COMMENT~
 ~** COMMENT~
    */just like the star of headline/*
-
-
-
 * Day 2
+** something more about tables                                       :Tables:
+*** Example
+| name  | age | grades |
+|-------+-----+--------|
+| John  |  19 |     92 |
+| Alice |  18 |     98 |
+| Mike  |  20 |     78 |
+*** key
++ *C-c Tab* shrink or expand *column* width
+
+** tags                                                                :Tags:
+*** introduction
++ every headline can have a list of tags
++ tags are located at the end of headline
++ tags must be wrapped between single colon (/:work:/)
++ hierarchical (father headline also has son's tags)
+*** set tags                                                           
+type *C-c C-c* or *C-c C-q* to set t
+*** search tags
+type *C-c / m* to search tags
+** Todo                                                                :Todo:
+*** set Todo
+type *C-c C-t* to set Todo and change the Todo's state
+*** change the Todo's state
+#+begin_src emacs-lisp
+(setq org-todo-keywords
+  '((sequence "TODO"  "FEEDBACK" "|" "DONE")))
+#+end_src
+
+#+RESULTS:
+| sequence | TODO | FEEDBACK |   |   | DONE |
+*** set TODO types
+#+begin_src emacs-lisp
+(setq org-todo-keywords '((type "work" "home" "|" "DONE")))
+#+end_src
+
+#+RESULTS:
+| type | work | home |   |   | DONE |
+
+
